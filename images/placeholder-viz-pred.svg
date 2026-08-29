@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="PLACEHOLDER: vizualizace pYed  doplnit fotografii">
+  <rect width="800" height="600" fill="#E8E8E8"/>
+  <rect x="40" y="40" width="720" height="520" fill="none" stroke="#868686" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="400" y="270" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="22" font-weight="700" fill="#333">PLACEHOLDER</text>
+  <text x="400" y="310" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="16" fill="#484848">Vizualizace pYed  doplnit fotografii</text>
+  <text x="400" y="345" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="13" fill="#868686">images/placeholder-viz-pred.svg</text>
+</svg>

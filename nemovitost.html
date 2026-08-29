@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Detail nemovitosti - Tomáš Frydrýšek, realitní makléř Bidli, Praha a okolí.">
+  <title>Detail nemovitosti | Tomáš Frydrýšek</title>
+</head>
+<body data-page="nemovitost" class="page-inner">
+
+  <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
+  <div id="site-header"></div>
+
+  <main id="main-content">
+
+    <section class="section property-detail" aria-labelledby="property-title">
+      <div class="container">
+        <a href="nemovitosti.html" class="property-detail__back reveal" id="property-back">← Zpět na nabídku</a>
+
+        <div class="property-detail__grid reveal" id="property-detail-content" hidden>
+          <div class="property-detail__gallery">
+            <img class="property-detail__image" id="property-image" src="" alt="" width="1200" height="900">
+          </div>
+          <div class="property-detail__info">
+            <span class="section-tag" id="property-status"></span>
+            <p class="property-detail__location" id="property-location"></p>
+            <h1 class="property-detail__title" id="property-title"></h1>
+            <p class="property-detail__price" id="property-price"></p>
+            <div class="property-detail__specs" id="property-specs"></div>
+            <div class="property-detail__copy">
+              <p class="property-detail__desc" id="property-desc"></p>
+              <p class="property-detail__desc property-detail__desc--secondary" id="property-detail-text" hidden></p>
+            </div>
+            <div class="property-detail__highlights" id="property-highlights" hidden>
+              <h2 class="property-detail__subtitle">Hlavní přednosti</h2>
+              <ul class="property-detail__highlights-list" id="property-highlights-list"></ul>
+            </div>
+            <div class="property-detail__actions">
+              <a href="kontakt.html" class="btn btn--accent btn--lg" id="property-cta-primary">Mám zájem - kontaktujte mě</a>
+              <a href="#" class="btn btn--outline-dark btn--lg" id="property-hv-link" target="_blank" rel="noopener noreferrer" hidden>Detail na Bidli</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-detail__empty reveal" id="property-detail-empty" hidden>
+          <h1 class="section-title">Nemovitost nenalezena</h1>
+          <p class="section-desc">Tato nemovitost v nabídce není nebo odkaz není platný.</p>
+          <a href="nemovitosti.html" class="btn btn--accent btn--lg">Zpět na nabídku</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="js/partials.js"></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>

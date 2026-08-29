@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Aktuální nabídka nemovitostí Tomáše Frydrýška: Žižkov, Choteč u Prahy a Jeneč. Praha a okolí.">
+  <title>Nemovitosti | Tomáš Frydrýšek - Realitní makléř Praha</title>
+</head>
+<body data-page="nemovitosti" class="page-inner">
+
+  <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
+  <div id="site-header"></div>
+
+  <main id="main-content">
+
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <h1 id="page-title" class="page-hero__title">Nemovitosti</h1>
+        <p class="page-hero__desc">Aktuální nabídka k prodeji i realizované zakázky z mého profilu Bidli.</p>
+      </div>
+    </section>
+
+    <section class="listings section" id="nabidka" aria-label="Nemovitosti">
+      <div class="container">
+        <div class="property-view-tabs reveal" role="tablist" aria-label="Výběr nabídky">
+          <button class="property-view-tab active" type="button" data-property-view="nabidka" role="tab" aria-selected="true" aria-controls="panel-nabidka" id="tab-nabidka">Aktuální nabídka</button>
+          <button class="property-view-tab" type="button" data-property-view="prodano" role="tab" aria-selected="false" aria-controls="panel-prodano" id="tab-prodano">Realizováno</button>
+        </div>
+
+        <div class="property-panel property-panel--active" id="panel-nabidka" role="tabpanel" aria-labelledby="tab-nabidka">
+          <div class="listings__grid" id="listings-grid" aria-live="polite"></div>
+
+          <div class="listings__loading" id="listings-loading" aria-hidden="true">
+            <div class="spinner"></div>
+            <span>Načítám nabídku…</span>
+          </div>
+        </div>
+
+        <div class="property-panel" id="panel-prodano" role="tabpanel" aria-labelledby="tab-prodano" hidden>
+          <div class="deals__grid" id="deals-grid" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="js/partials.js"></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>

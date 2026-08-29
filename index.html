@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tomáš Frydrýšek - realitní makléř pro Prahu a okolí. V realitách od roku 1998, více než 700 realizovaných obchodů a osobní přístup ke každému klientovi.">
+  <title>Tomáš Frydrýšek | Realitní makléř Praha a okolí</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+
+  <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
+  <div id="site-header"></div>
+
+  <main id="main-content">
+
+    <section class="hero" id="hero" aria-label="Úvodní sekce">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <a href="https://www.bidli.cz/specialista/tomas-frydrysek/13862" class="hero__partner reveal" target="_blank" rel="noopener noreferrer">
+            <img src="images/logo-bidli-black.svg" alt="Bidli" class="hero__partner-logo" width="180" height="64" loading="eager">
+          </a>
+          <h1 class="hero__title reveal">Tomáš Frydrýšek</h1>
+          <p class="hero__subtitle reveal">
+            Realitní makléř a průvodce nemovitostmi pro Prahu a okolí.
+            Osobní přístup ke každému klientovi i ke každé nemovitosti.
+          </p>
+          <div class="hero__cta reveal">
+            <a href="kontakt.html" class="btn btn--accent btn--lg">Chci prodat nemovitost</a>
+            <a href="kontakt.html" class="btn btn--outline-dark btn--lg">Kontaktovat Tomáše</a>
+          </div>
+        </div>
+        <div class="hero__video-wrap reveal">
+          <img src="images/fotka_1.jpg" alt="Tomáš Frydrýšek, realitní makléř" class="hero__video" width="720" height="960">
+        </div>
+      </div>
+    </section>
+
+    <div class="social-bar" aria-label="Sociální sítě">
+      <div class="container social-bar__inner">
+        <span class="social-bar__label">Sledujte mě online</span>
+        <div class="social-bar__links">
+          <a href="https://www.facebook.com/Frydra" class="social-bar__link" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <section class="stats section" id="statistiky" aria-label="Zkušenosti">
+      <div class="container">
+        <div class="stats__grid">
+          <div class="stats__item reveal"><span class="stats__number" data-target="700" data-suffix="+">0</span><span class="stats__label">realizovaných obchodů</span></div>
+          <div class="stats__item reveal"><span class="stats__number" data-target="1000" data-suffix="+">0</span><span class="stats__label">klientů</span></div>
+          <div class="stats__item reveal"><span class="stats__number">1998</span><span class="stats__label">v realitách od roku</span></div>
+          <div class="stats__item reveal"><span class="stats__number stats__number--text">Praha</span><span class="stats__label">a okolí</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section section--gray section-preview" aria-labelledby="preview-o-mne">
+      <div class="container">
+        <div class="preview-about">
+          <div class="preview-about__image-wrap reveal">
+            <img src="images/fotka_4.jpg" alt="Tomáš Frydrýšek" class="preview-about__image" loading="lazy" width="2048" height="2048">
+          </div>
+          <div>
+            <div class="section-header reveal">
+              <span class="section-tag">O mně</span>
+              <h2 id="preview-o-mne" class="section-title">Reality beru osobně. Pořád.</h2>
+            </div>
+            <p class="preview-about__text reveal">V realitách působím od roku 1998. Za tu dobu jsem zrealizoval víc než 700 obchodů a pomohl víc než 1 000 klientů s jejich bytovou situací.</p>
+            <p class="preview-about__text reveal">Když zrovna neřeším nemovitost, jsem s francouzským buldočkem Brunem, na tenise nebo za Spartou.</p>
+            <div class="section-preview__footer reveal" style="justify-content:flex-start;margin-top:1.5rem;"><a href="o-mne.html" class="btn btn--outline-dark btn--lg">Více o mně</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="listings section section-preview" aria-labelledby="preview-nabidka">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Aktuální nabídka</span>
+          <h2 id="preview-nabidka" class="section-title">Nemovitosti v prodeji</h2>
+          <p class="section-desc">Aktuální nabídka z mého profilu. Pokud hledáte něco konkrétního, ozvěte se.</p>
+        </div>
+        <div class="listings__grid" id="listings-grid" data-limit="3"></div>
+        <div class="listings__loading" id="listings-loading" aria-hidden="true"><div class="spinner"></div><span>Načítám nabídku…</span></div>
+        <div class="section-preview__footer reveal"><a href="nemovitosti.html#nabidka" class="btn btn--accent btn--lg">Zobrazit celou nabídku</a></div>
+      </div>
+    </section>
+
+    <section class="deals section section--gray section-preview" aria-labelledby="preview-prodano">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Realizované zakázky</span>
+          <h2 id="preview-prodano" class="section-title">Realizované nemovitosti</h2>
+          <p class="section-desc">Ukázka zakázek, které už mají za sebou. Galerii lze později doplnit o další realizace.</p>
+        </div>
+        <div class="deals__grid" id="deals-grid" data-limit="3"></div>
+        <div class="section-preview__footer reveal"><a href="nemovitosti.html#prodano" class="btn btn--accent btn--lg">Všechny realizované nemovitosti</a></div>
+      </div>
+    </section>
+
+    <section class="services section section-preview" aria-labelledby="preview-sluzby">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="section-tag">Realitní služby</span>
+          <h2 id="preview-sluzby" class="section-title">Kompletní servis při prodeji nemovitosti</h2>
+          <p class="section-desc">Od první schůzky až po předání klíčů vás provedu celým procesem.</p>
+        </div>
+        <div class="services__grid services__grid--preview">
+          <div class="service-card reveal"><div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3 class="service-card__title">Ocenění nemovitosti</h3></div>
+          <div class="service-card reveal"><div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><h3 class="service-card__title">Profesionální fotografie</h3></div>
+          <div class="service-card reveal"><div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><h3 class="service-card__title">Videoprohlídky</h3></div>
+          <div class="service-card reveal"><div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><h3 class="service-card__title">Marketing a reklama</h3></div>
+          <div class="service-card reveal"><div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3 class="service-card__title">Právní servis</h3></div>
+        </div>
+        <div class="section-preview__footer reveal"><a href="sluzby.html" class="btn btn--accent btn--lg">Všechny služby</a></div>
+      </div>
+    </section>
+
+    <section class="testimonials section section--gray section-preview" aria-labelledby="preview-reference">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="section-tag">Reference klientů</span>
+          <h2 id="preview-reference" class="section-title">Co říkají moji klienti</h2>
+          <div class="testimonials__rating reveal">
+            <div class="testimonials__stars" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="testimonials__carousel reveal" id="testimonials-carousel">
+          <button type="button" class="testimonials__nav-btn" aria-label="Předchozí reference" data-carousel-prev="testimonials"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <div class="testimonials__viewport">
+            <div class="testimonials__track" id="testimonials-track"></div>
+          </div>
+          <button type="button" class="testimonials__nav-btn" aria-label="Další reference" data-carousel-next="testimonials"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+        <div class="section-preview__footer reveal"><a href="reference.html" class="btn btn--accent btn--lg">Všechny reference</a></div>
+      </div>
+    </section>
+
+    <section class="section home-cta" aria-labelledby="preview-kontakt">
+      <div class="container">
+        <div class="home-cta__inner reveal">
+          <span class="section-tag">Kontakt</span>
+          <h2 id="preview-kontakt" class="section-title">Pojďme probrat váš prodej</h2>
+          <p class="home-cta__desc">Napište nebo zavolejte. Domluvíme termín, projdeme nemovitost a další kroky.</p>
+          <div class="home-cta__actions">
+            <a href="kontakt.html" class="btn btn--accent btn--lg">Chci prodat nemovitost</a>
+            <a href="kontakt.html" class="btn btn--outline-dark btn--lg">Kontaktovat Tomáše</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="js/partials.js"></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>

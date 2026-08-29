@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Kontaktujte Tomáše Frydrýška - telefon +420 734 168 294, e-mail tomas.frydrysek@bidli.cz. Praha a okolí.">
+  <title>Kontakt | Tomáš Frydrýšek - Realitní makléř Praha</title>
+</head>
+<body data-page="kontakt" class="page-inner">
+
+  <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
+  <div id="site-header"></div>
+
+  <main id="main-content">
+
+    <section class="page-hero page-hero--dark" aria-labelledby="page-title">
+      <div class="container">
+        <span class="section-tag section-tag--light">Spojme se</span>
+        <h1 id="page-title" class="page-hero__title">Kontakt</h1>
+        <p class="page-hero__desc">Krátká zpráva stačí - ozvu se, jakmile to půjde.</p>
+      </div>
+    </section>
+
+    <section class="section contact-page" aria-labelledby="contact-info-heading">
+      <div class="container">
+        <div class="contact-split">
+          <div class="contact-info reveal">
+            <div class="contact-info__intro">
+              <h2 id="contact-info-heading" class="contact-info__name">Tomáš Frydrýšek</h2>
+              <p class="contact-info__role">Realitní makléř · Praha a okolí</p>
+            </div>
+
+            <div class="contact-info__details">
+              <a href="mailto:tomas.frydrysek@bidli.cz" class="contact-info__detail">tomas.frydrysek@bidli.cz</a>
+              <a href="tel:+420734168294" class="contact-info__detail">+420 734 168 294</a>
+              <p class="contact-info__address">Praha a okolí</p>
+            </div>
+
+            <div class="contact-info__group">
+              <p class="section-tag contact-info__social-label">Sociální sítě</p>
+              <div class="contact-info__social" aria-label="Sociální sítě">
+              <a href="https://www.facebook.com/Frydra" class="about__social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+              </div>
+            </div>
+
+            <div class="contact-info__partner-block">
+              <a href="https://www.bidli.cz/specialista/tomas-frydrysek/13862" class="contact-info__partner" target="_blank" rel="noopener noreferrer">
+                <img src="images/logo-bidli-black.svg" alt="Bidli" width="180" height="64" loading="lazy">
+              </a>
+              <p class="contact-info__partner-note">
+                Působím jako průvodce nemovitostmi v síti <a href="https://www.bidli.cz/" target="_blank" rel="noopener noreferrer">Bidli</a>.
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-panel reveal">
+            <h3 class="contact-panel__title">Rychlá zpráva</h3>
+            <form class="contact-form" id="contact-form" action="#" method="post" novalidate>
+              <label class="visually-hidden" for="cf-name">Jméno</label>
+              <input class="contact-input" id="cf-name" name="name" type="text" required placeholder="Jméno" autocomplete="name">
+              <label class="visually-hidden" for="cf-email">E-mail</label>
+              <input class="contact-input" id="cf-email" name="email" type="email" required placeholder="E-mail" autocomplete="email">
+              <label class="visually-hidden" for="cf-phone">Telefon</label>
+              <input class="contact-input" id="cf-phone" name="phone" type="tel" required placeholder="Telefon" autocomplete="tel">
+              <label class="visually-hidden" for="cf-msg">Zpráva</label>
+              <textarea class="contact-input contact-input--area" id="cf-msg" name="message" rows="4" required placeholder="Jak vám mohu pomoci?"></textarea>
+              <button type="submit" class="btn btn--accent btn--lg contact-form__submit">Odeslat</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--gray contact-map-section" aria-labelledby="contact-map-heading">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <h2 id="contact-map-heading" class="section-title">Lokalita</h2>
+          <p class="section-desc">Praha a okolí. Konkrétní schůzku domluvíme podle nemovitosti.</p>
+        </div>
+        <div class="contact-map reveal">
+          <iframe
+            title="Mapa - Praha a okolí"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Praha&output=embed"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="js/partials.js"></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>
