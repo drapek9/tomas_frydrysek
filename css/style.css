@@ -3347,7 +3347,7 @@ a.deal-card {
   }
 
   .services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .services-include__grid {
@@ -3715,17 +3715,19 @@ a.deal-card {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 
 .service-detail {
   background: var(--color-white);
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-lg);
-  padding: 2.5rem;
+  padding: 2rem;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 
 .service-detail:hover {
@@ -3766,7 +3768,7 @@ a.deal-card {
 }
 
 .service-detail ul {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
 }
 
 .service-detail li {
@@ -3787,6 +3789,18 @@ a.deal-card {
   border-left: 2px solid var(--color-accent);
   border-bottom: 2px solid var(--color-accent);
   transform: rotate(-45deg);
+}
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .services-include__grid {
