@@ -213,7 +213,7 @@
   const estimateForm = document.getElementById('estimate-form');
   const currentPage = document.body.dataset.page || 'home';
   const contactUrl = 'kontakt.html';
-  const estimateUrl = 'kontakt.html';
+  const estimateUrl = 'odhad.html';
 
   function cacheDomRefs() {
     header = document.getElementById('header');
@@ -243,7 +243,25 @@
     burger.addEventListener('click', toggleMenu);
 
     nav.querySelectorAll('.nav__link').forEach(function (link) {
-      link.addEventListener('click', closeMenu);
+      link.addEventListener('click', function (e) {
+        // U aktuální stránky nechceme reload, ale plynule scroll na začátek.
+        // Porovnání děláme přes URL, aby fungovalo i při různém hostování/paths.
+        var href = link.getAttribute('href') || '';
+        var clickedUrl;
+        try {
+          clickedUrl = new URL(href, window.location.href);
+        } catch (err) {
+          clickedUrl = null;
+        }
+
+        var samePage = clickedUrl && clickedUrl.pathname === window.location.pathname;
+
+        if (samePage) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        closeMenu();
+      });
     });
 
     document.addEventListener('keydown', function (e) {
@@ -557,11 +575,13 @@
     grid.innerHTML = '';
 
     items.forEach(function (item, index) {
-      var card = document.createElement('a');
-      card.className = 'deal-card reveal visible';
-      card.href = propertyDetailUrl(item, true);
+      // "Realizováno" nesmí být rozkliknutelné (jen vizuální karta s hoverem).
+      // Používáme div místo odkazu, aby se neotevíral detail a nezobrazoval se kurzor pointer.
+      var card = document.createElement('div');
+      card.className = 'deal-card deal-card--sold reveal visible';
       card.setAttribute('aria-label', item.location + ' - ' + item.type + ', ' + item.result);
       card.style.transitionDelay = index * 0.06 + 's';
+      card.tabIndex = -1;
 
       card.innerHTML =
         '<img class="deal-card__image" src="' + item.image + '" alt="' + item.location + ' - ' + item.type + '" loading="lazy" width="500" height="650">' +
@@ -678,7 +698,7 @@
       }
       renderPropertyHighlights(item);
       if (ctaPrimary) {
-        ctaPrimary.href = estimateUrl;
+        ctaPrimary.href = contactUrl;
         ctaPrimary.textContent = 'Chci prodat podobně';
       }
     } else {
@@ -1375,6 +1395,10 @@
         item.classList.toggle('is-active', idx === step);
         item.classList.toggle('is-done', idx < step);
       });
+      var progressBar = document.getElementById('estimate-progress-bar');
+      if (progressBar) {
+        progressBar.style.width = ((step + 1) / steps.length * 100) + '%';
+      }
       var feedback = document.getElementById('estimate-feedback');
       if (feedback) {
         feedback.innerHTML = step === steps.length - 1
