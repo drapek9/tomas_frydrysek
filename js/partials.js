@@ -62,6 +62,7 @@
             '<h3 class="footer__heading">Kontakt</h3>' +
             '<ul class="footer__links">' +
               '<li><a href="tel:+420734168294">+420 734 168 294</a></li>' +
+              '<li><a href="https://wa.me/420734168294" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>' +
               '<li><a href="mailto:tomas.frydrysek@bidli.cz">tomas.frydrysek@bidli.cz</a></li>' +
               '<li>Praha a okolí</li>' +
             '</ul>' +

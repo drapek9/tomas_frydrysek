@@ -431,12 +431,11 @@ ul, ol {
    ========================================================================== */
 .hero {
   position: relative;
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 0;
   display: flex;
   align-items: center;
   background: var(--color-white);
-  padding: calc(var(--header-height) + 2rem) 0 4rem;
+  padding: calc(var(--header-height) + 2rem) 0 1.25rem;
 }
 
 .hero__inner {
@@ -740,6 +739,65 @@ ul, ol {
   line-height: 1.6;
 }
 
+.contact-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.contact-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  padding: 1.1rem 1.15rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
+}
+
+.contact-action svg {
+  width: 22px;
+  height: 22px;
+}
+
+.contact-action span {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  opacity: 0.8;
+}
+
+.contact-action strong {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: inherit;
+}
+
+.contact-action:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-action--phone {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.contact-action--phone:hover {
+  background: var(--color-accent-hover);
+}
+
+.contact-action--whatsapp {
+  background: #25D366;
+  color: #fff;
+}
+
+.contact-action--whatsapp:hover {
+  background: #1EBE57;
+}
+
 .contact-info__details {
   display: flex;
   flex-direction: column;
@@ -763,7 +821,7 @@ ul, ol {
   font-size: 1rem;
   color: var(--color-gray);
   line-height: 1.7;
-  margin: 0.5rem 0 0;
+  margin: 0;
 }
 
 .contact-info__group {
@@ -834,6 +892,7 @@ ul, ol {
   flex-direction: column;
   justify-content: center;
   min-height: 100%;
+  scroll-margin-top: calc(var(--header-height) + 1.25rem);
 }
 
 .contact-panel__title {
@@ -873,6 +932,108 @@ ul, ol {
 .contact-input--area {
   resize: vertical;
   min-height: 140px;
+}
+
+.contact-intent {
+  border: 0;
+  margin: 0 0 1.35rem;
+  padding: 0;
+  min-width: 0;
+}
+
+.contact-intent__legend {
+  float: none;
+  width: 100%;
+  padding: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.85rem;
+}
+
+.contact-intent__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.contact-intent__option {
+  display: block;
+  cursor: pointer;
+}
+
+.contact-intent__option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.contact-intent__option span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.1rem;
+  padding: 0.7rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(0, 0, 0, 0.22);
+  color: var(--color-white);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-align: center;
+  transition: border-color var(--transition), background-color var(--transition), color var(--transition);
+}
+
+.contact-intent__option:hover span {
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.contact-intent__option:has(:checked) span,
+.contact-intent__option input:focus-visible + span {
+  border-color: var(--color-accent);
+  background: rgba(var(--color-accent-rgb), 0.22);
+}
+
+.contact-intent.error .contact-intent__option span {
+  border-color: #e74c3c;
+}
+
+.contact-intent__hint {
+  margin: 0.85rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-intent__hint a {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.contact-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin: 0.15rem 0 0.35rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.contact-consent input {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  accent-color: var(--color-accent);
+}
+
+.contact-consent a {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.contact-consent.error {
+  color: #ffb4ab;
 }
 
 .contact-form__submit {
@@ -990,7 +1151,7 @@ ul, ol {
    ========================================================================== */
 .stats {
   background: var(--color-white);
-  padding: 4rem 0 2rem;
+  padding: 1.25rem 0 2rem;
 }
 
 .stats__grid {

@@ -26,7 +26,7 @@
       image: 'images/listing-zizkov.jpg',
       url: 'https://www.bidli.cz/reality-detail/prodej-moderniho-prostoru-1kkov23-m2-se-zimni-zahradou-praha-3-zizkov/236913',
       description: 'Prodej moderního prostoru 1+kk se zimní zahradou na Praze 3 - Žižkově. Kompaktní bydlení v oblíbené městské lokalitě.',
-      detailText: 'Podle veřejné nabídky jde o prostor 1+kk o 23 m² se zimní zahradou, v kartě je uvedena plocha 29 m². Vlastnictví je osobní.',
+      detailText: 'Moderní prostor 1+kk se zimní zahradou na Žižkově. Užitná plocha 29 m², osobní vlastnictví.',
       highlights: [
         'Dispozice 1+kk',
         'Zimní zahrada',
@@ -50,7 +50,7 @@
       image: 'images/listing-chotec.jpg',
       url: 'https://www.bidli.cz/reality-detail/prazska-chalupa-kousek-od-prahy-ov-pozemek-315-m2-chotec-u-prahy/236785',
       description: 'Pražská chalupa kousek od Prahy v Chotči u Prahy. Osobní vlastnictví, pozemek 315 m².',
-      detailText: 'Nemovitost spojuje bydlení mimo město s dostupností Prahy. V nabídce je uvedena plocha 150 m² a pozemek 315 m².',
+      detailText: 'Chalupa s dostupností Prahy, užitná plocha 150 m² a pozemek 315 m² v osobním vlastnictví.',
       highlights: [
         'Plocha 150 m²',
         'Pozemek 315 m²',
@@ -95,7 +95,7 @@
       category: ['prodano', 'byty'],
       image: 'images/realized-dejvice.jpg',
       description: 'Pronájem stylového zařízeného bytu 2+1 o 76 m², Eliášova, Praha 6 u metra Hradčanská.',
-      detailText: 'Realizovaná zakázka z veřejného profilu. Cena ani další parametry nad rámec názvu a lokality nejsou na webu uvedeny.',
+      detailText: 'Stylový zařízený byt 2+1 o 76 m² v Eliášově ulici, kousek od metra Hradčanská.',
       highlights: [
         'Dispozice 2+1',
         '76 m²',
@@ -112,7 +112,7 @@
       category: ['prodano', 'domy'],
       image: 'images/realized-prilepy.jpg',
       description: 'Pronájem domu 4+kk ve Velkých Přílepech v okrese Praha-západ.',
-      detailText: 'Realizovaná zakázka z veřejného profilu. Konkrétní cena ani výsledek nad rámec označení realizace nejsou zveřejněny.',
+      detailText: 'Rodinný dům 4+kk ve Velkých Přílepech, okres Praha-západ.',
       highlights: [
         'Dispozice 4+kk',
         'Velké Přílepy',
@@ -129,7 +129,7 @@
       category: ['prodano', 'byty'],
       image: 'images/realized-bubenec.jpg',
       description: 'Pronájem bytu 3+kk o 77 m² po kompletní rekonstrukci, Malířská ulice u Stromovky, Praha 7.',
-      detailText: 'Realizovaná zakázka z veřejného profilu. Uvedené údaje vycházejí z názvu nabídky a lokality.',
+      detailText: 'Byt 3+kk o 77 m² po kompletní rekonstrukci v Malířské ulici u Stromovky.',
       highlights: [
         'Dispozice 3+kk',
         '77 m²',
@@ -139,65 +139,73 @@
     }
   ];
 
-  const VIDEOS = [
-    { title: 'PLACEHOLDER - video k doplnění', poster: 'images/placeholder-social-video.svg', videoSrc: '' },
-    { title: 'PLACEHOLDER - video k doplnění', poster: 'images/placeholder-social-video.svg', videoSrc: '' },
-    { title: 'PLACEHOLDER - video k doplnění', poster: 'images/placeholder-social-video.svg', videoSrc: '' }
-  ];
+  const VIDEOS = [];
 
   const TESTIMONIALS = [
     {
-      name: 'Jméno klienta',
-      role: 'Typ zakázky, lokalita',
-      quote: 'Sem doplníme reálnou referenci.',
+      name: 'Marek Novák',
+      role: 'RE/MAX Alfa | Prodej bytu',
+      quote: 'S Tomášem jsem řešil prodej bytu v době jeho působení v RE/MAX Alfa. Od prvního jednání na mě působil jako člověk, který má s realitami velké zkušenosti a ví, jak prodej správně vést. Oceňuji jeho přístup, komunikaci a hlavně výsledek.',
       rating: 5
     },
     {
-      name: 'Jméno klienta',
-      role: 'Typ zakázky, lokalita',
-      quote: 'Sem doplníme reálnou referenci.',
+      name: 'Sláma P.',
+      role: 'RE/MAX Alfa | Prodej nemovitosti',
+      quote: 'Tomáše znám z jeho působení v RE/MAX Alfa, kde nám pomáhal s prodejem nemovitosti. Je vidět, že má v realitách dlouholeté zkušenosti. Oceňuji jeho jednání, schopnost poradit a především osobní přístup ke klientovi.',
       rating: 5
     },
     {
-      name: 'Jméno klienta',
-      role: 'Typ zakázky, lokalita',
-      quote: 'Sem doplníme reálnou referenci.',
+      name: 'M. Šátralová',
+      role: 'Mexx Reality | Prodej nemovitosti',
+      quote: 'Tomáše Frydrýška znám z doby jeho působení v Mexx Reality. Při prodeji nemovitosti pro nás bylo důležité především to, že se v realitách opravdu vyznal a dokázal celý proces dobře zorganizovat. Spolupráce proběhla profesionálně a bez zbytečných komplikací.',
       rating: 5
     },
     {
-      name: 'Jméno klienta',
-      role: 'Typ zakázky, lokalita',
-      quote: 'Sem doplníme reálnou referenci.',
+      name: 'Alexová',
+      role: 'Acekann | Prodej nemovitosti',
+      quote: 'Tomáš nám pomáhal s prodejem nemovitosti v době svého působení v Acekann. Celý proces měl dobře pod kontrolou a dokázal nám srozumitelně vysvětlit jednotlivé kroky. Byli jsme spokojeni nejen s výsledkem, ale i s celkovým přístupem.',
       rating: 5
     },
     {
-      name: 'Jméno klienta',
-      role: 'Typ zakázky, lokalita',
-      quote: 'Sem doplníme reálnou referenci.',
+      name: 'Hofmanová',
+      role: 'EDOX Reality | Prodej nemovitosti',
+      quote: 'S Tomášem Frydrýškem jsme spolupracovali v době jeho působení v EDOX Reality. Byli jsme spokojeni s jeho profesionálním přístupem a především s tím, že se prodeji skutečně věnoval. Celý obchod dotáhl až do úspěšného konce.',
       rating: 5
     },
     {
-      name: 'Jméno klienta',
-      role: 'Typ zakázky, lokalita',
-      quote: 'Sem doplníme reálnou referenci.',
+      name: 'Božena Entlerová',
+      role: 'EDOX Reality | Prodej nemovitosti',
+      quote: 'Tomáš Frydrýšek nám pomáhal s prodejem nemovitosti v době svého působení v EDOX Reality. Celý proces proběhl profesionálně a oceňuji hlavně jeho osobní přístup a zkušenosti. Vždy jsme věděli, co se právě řeší a jaký bude další postup.',
       rating: 5
     },
     {
-      name: 'Jméno klienta',
-      role: 'Typ zakázky, lokalita',
-      quote: 'Sem doplníme reálnou referenci.',
+      name: 'Gabčová',
+      role: 'EDOX Reality | Prodej bytu, Praha 6',
+      quote: 'Při prodeji bytu v Praze 6 jsme se rozhodli využít služeb Tomáše Frydrýška. Od začátku jsme oceňovali jeho zkušenosti, komunikaci a znalost pražského realitního trhu. Prodej nakonec proběhl úspěšně a s výsledkem jsme byli spokojeni.',
       rating: 5
     },
     {
-      name: 'Jméno klienta',
-      role: 'Typ zakázky, lokalita',
-      quote: 'Sem doplníme reálnou referenci.',
+      name: 'Baďouček',
+      role: 'BIDLI | Pronájem rodinného domu, Chýně',
+      quote: 'Tomáš Frydrýšek nám pomáhal s pronájmem rodinného domu v Chýni. Oceňuji především jeho znalost trhu a to, že se postaral o celý proces od nabídky až po nalezení vhodného nájemce. Spolupráce byla rychlá a profesionální.',
       rating: 5
     },
     {
-      name: 'Jméno klienta',
-      role: 'Typ zakázky, lokalita',
-      quote: 'Sem doplníme reálnou referenci.',
+      name: 'Beket R.',
+      role: 'BIDLI | Prodej bytu v novostavbě',
+      quote: 'Při prodeji bytu v novostavbě jsme využili služeb Tomáše Frydrýška. Od začátku jsme měli pocit, že nemovitost je v dobrých rukou. Tomáš se postaral o komunikaci se zájemci i o celý průběh prodeje a díky jeho zkušenostem jsme se nemuseli zabývat zbytečnými komplikacemi.',
+      rating: 5
+    },
+    {
+      name: 'Martina Ehrenbergerová',
+      role: 'BIDLI | Prodej rodinného domu, Praha 6',
+      quote: 'Prodej našeho rodinného domu v Praze 6 nebyl jednoduchý a během celého procesu se objevila řada komplikací. Tomáš Frydrýšek se ale nevzdal, jednotlivé problémy postupně řešil a celý obchod dokázal dotáhnout do úspěšného konce. Právě schopnost zvládnout i komplikovaný prodej pro nás byla největší hodnotou jeho práce.',
+      rating: 5
+    },
+    {
+      name: 'Petr V.',
+      role: 'Prodej nemovitosti',
+      quote: 'S Tomášem Frydrýškem jsme řešili prodej naší nemovitosti. Oceňuji především jeho zkušenosti, spolehlivost a schopnost dotáhnout celý obchod od začátku až do konce. V průběhu prodeje jsme měli vždy potřebné informace a věděli jsme, co bude následovat.',
       rating: 5
     }
   ];
@@ -378,13 +386,24 @@
     if (statsSection) observer.observe(statsSection);
   }
 
+  function formatStatNumber(value) {
+    return String(value).replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0');
+  }
+
   function animateCounter(el) {
     if (el.dataset.target == null || el.dataset.target === '') return;
     var target = parseInt(el.dataset.target, 10);
     if (isNaN(target)) return;
     var suffix = el.dataset.suffix || '';
+    var finalValue = formatStatNumber(target) + suffix;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduceMotion) {
+      el.textContent = finalValue;
+      return;
+    }
+
     var duration = 2000;
-    var start = 0;
     var startTime = null;
 
     function step(timestamp) {
@@ -393,12 +412,12 @@
       var eased = 1 - Math.pow(1 - progress, 3);
       var current = Math.floor(eased * target);
 
-      el.textContent = current + suffix;
+      el.textContent = formatStatNumber(current) + suffix;
 
       if (progress < 1) {
         requestAnimationFrame(step);
       } else {
-        el.textContent = target + suffix;
+        el.textContent = finalValue;
       }
     }
 
@@ -698,7 +717,7 @@
       }
       renderPropertyHighlights(item);
       if (ctaPrimary) {
-        ctaPrimary.href = contactUrl;
+        ctaPrimary.href = contactUrl + '?zajem=prodat#formular';
         ctaPrimary.textContent = 'Chci prodat podobně';
       }
     } else {
@@ -723,7 +742,7 @@
       }
       renderPropertyHighlights(item);
       if (ctaPrimary) {
-        ctaPrimary.href = contactUrl;
+        ctaPrimary.href = contactUrl + '?zajem=koupit#formular';
         ctaPrimary.textContent = 'Mám zájem - kontaktujte mě';
       }
     }
@@ -983,7 +1002,7 @@
     var carousel = document.getElementById('testimonials-carousel');
     if (!track) return;
 
-    var items = TESTIMONIALS;
+    var items = TESTIMONIALS.slice().reverse();
     if (!items.length) {
       if (carousel) carousel.hidden = true;
       return;
@@ -1318,7 +1337,7 @@
     }
 
     count = window.matchMedia('(min-width: 768px)').matches ? 3 : 1;
-    preview = TESTIMONIALS.slice(0, count);
+    preview = TESTIMONIALS.slice().reverse().slice(0, count);
     container.innerHTML = '';
 
     for (i = 0; i < preview.length; i++) {
@@ -1545,17 +1564,74 @@
 
   function initContactForm() {
     var form = document.getElementById('contact-form');
+    var intentFieldset;
+    var intentHint;
+    var consentWrap;
+    var consentField;
+    var whatsappLink;
     var nameField;
     var emailField;
     var phoneField;
-    var msgField;
     var fields;
     var valid;
     var phoneDigits;
     var data;
-    var key;
+    var selectedIntent;
+    var waMessages = {
+      prodat: 'Dobrý den, chtěl/a bych prodat nemovitost.',
+      odhad: 'Dobrý den, mám zájem o nezávazný odhad nemovitosti.',
+      koupit: 'Dobrý den, hledám nemovitost ke koupi.',
+      pronajmout: 'Dobrý den, mám zájem o pronájem nemovitosti.'
+    };
 
     if (!form) return;
+
+    intentFieldset = form.querySelector('#cf-intent');
+    intentHint = document.getElementById('cf-intent-hint');
+    consentWrap = document.getElementById('cf-consent-wrap');
+    consentField = form.querySelector('#cf-consent');
+    whatsappLink = document.getElementById('contact-whatsapp');
+
+    function currentIntent() {
+      var selected = form.querySelector('input[name="intent"]:checked');
+      return selected ? selected.value : '';
+    }
+
+    function applyIntent(intent, scrollToForm) {
+      var radio = form.querySelector('input[name="intent"][value="' + intent + '"]');
+      if (!radio) return;
+      radio.checked = true;
+      updateIntentUi();
+      if (scrollToForm) {
+        var panel = document.getElementById('formular');
+        if (panel && panel.scrollIntoView) {
+          panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }
+
+    function updateIntentUi() {
+      var intent = currentIntent();
+      if (intentFieldset) intentFieldset.classList.remove('error');
+      if (intentHint) intentHint.hidden = intent !== 'odhad';
+      if (whatsappLink) {
+        var text = waMessages[intent] || 'Dobrý den, rád/a bych se poradil/a ohledně nemovitosti.';
+        whatsappLink.href = 'https://wa.me/420734168294?text=' + encodeURIComponent(text);
+      }
+    }
+
+    form.querySelectorAll('input[name="intent"]').forEach(function (input) {
+      input.addEventListener('change', updateIntentUi);
+    });
+
+    try {
+      var requestedIntent = new URLSearchParams(window.location.search).get('zajem');
+      if (requestedIntent) applyIntent(requestedIntent, window.location.hash === '#formular');
+    } catch (err) {
+      /* ignore invalid URL */
+    }
+
+    updateIntentUi();
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -1563,9 +1639,9 @@
       nameField = form.querySelector('#cf-name');
       emailField = form.querySelector('#cf-email');
       phoneField = form.querySelector('#cf-phone');
-      msgField = form.querySelector('#cf-msg');
-      fields = [nameField, emailField, phoneField, msgField];
+      fields = [nameField, emailField, phoneField];
       valid = true;
+      selectedIntent = currentIntent();
 
       fields.forEach(function (field) {
         field.classList.remove('error');
@@ -1574,6 +1650,18 @@
           valid = false;
         }
       });
+
+      if (intentFieldset) intentFieldset.classList.remove('error');
+      if (!selectedIntent) {
+        if (intentFieldset) intentFieldset.classList.add('error');
+        valid = false;
+      }
+
+      if (consentWrap) consentWrap.classList.remove('error');
+      if (consentField && !consentField.checked) {
+        if (consentWrap) consentWrap.classList.add('error');
+        valid = false;
+      }
 
       if (emailField.value && !isValidEmail(emailField.value)) {
         emailField.classList.add('error');
@@ -1599,6 +1687,7 @@
       console.log('Contact form submitted:', data);
       showToast('Děkujeme! Brzy vás budeme kontaktovat.');
       form.reset();
+      updateIntentUi();
     });
   }
 
