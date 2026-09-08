@@ -87,54 +87,130 @@
   const DEALS = [
     {
       id: 1,
-      location: 'Praha 6, Dejvice',
-      type: 'Pronájem bytu 2+1, 76 m²',
+      location: 'Praha 10, Vršovice',
+      type: 'Prodej bytu 2+kk',
       typeLabel: 'Byt',
-      area: '76 m²',
-      result: 'Realizováno',
-      category: ['prodano', 'byty'],
-      image: 'images/realized-dejvice.jpg',
-      description: 'Pronájem stylového zařízeného bytu 2+1 o 76 m², Eliášova, Praha 6 u metra Hradčanská.',
-      detailText: 'Stylový zařízený byt 2+1 o 76 m² v Eliášově ulici, kousek od metra Hradčanská.',
+      result: 'Prodáno',
+      category: ['prodano', 'byty', 'prodej'],
+      image: 'images/nemovitosti/2kk-vrsovice-p10-prodej.jpg',
+      description: 'Prodej bytu 2+kk ve Vršovicích na Praze 10.',
+      detailText: 'Byt 2+kk v oblíbené lokalitě Praha 10 – Vršovice.',
       highlights: [
-        'Dispozice 2+1',
-        '76 m²',
-        'Praha 6 - Dejvice',
-        'U metra Hradčanská'
+        'Dispozice 2+kk',
+        'Byt',
+        'Praha 10 – Vršovice'
       ]
     },
     {
       id: 2,
-      location: 'Velké Přílepy',
-      type: 'Pronájem domu 4+kk',
-      typeLabel: 'Dům',
-      result: 'Realizováno',
-      category: ['prodano', 'domy'],
-      image: 'images/realized-prilepy.jpg',
-      description: 'Pronájem domu 4+kk ve Velkých Přílepech v okrese Praha-západ.',
-      detailText: 'Rodinný dům 4+kk ve Velkých Přílepech, okres Praha-západ.',
+      location: 'Holubice',
+      type: 'Pronájem bytu 3+kk',
+      typeLabel: 'Byt',
+      result: 'Pronajato',
+      category: ['prodano', 'byty', 'pronajem'],
+      image: 'images/nemovitosti/3kk-holubice-pronajem.jpg',
+      description: 'Pronájem bytu 3+kk v Holubicích.',
+      detailText: 'Byt 3+kk v bytovém domě v Holubicích.',
       highlights: [
-        'Dispozice 4+kk',
-        'Velké Přílepy',
-        'Okres Praha-západ'
+        'Dispozice 3+kk',
+        'Byt',
+        'Holubice'
       ]
     },
     {
       id: 3,
-      location: 'Praha 7, Bubeneč',
-      type: 'Pronájem bytu 3+kk, 77 m²',
+      location: 'Praha 4, Přeštická',
+      type: 'Prodej bytu 2+kk',
       typeLabel: 'Byt',
-      area: '77 m²',
-      result: 'Realizováno',
-      category: ['prodano', 'byty'],
-      image: 'images/realized-bubenec.jpg',
-      description: 'Pronájem bytu 3+kk o 77 m² po kompletní rekonstrukci, Malířská ulice u Stromovky, Praha 7.',
-      detailText: 'Byt 3+kk o 77 m² po kompletní rekonstrukci v Malířské ulici u Stromovky.',
+      result: 'Prodáno',
+      category: ['prodano', 'byty', 'prodej'],
+      image: 'images/nemovitosti/2kk-presticka-p4-prodej.png',
+      description: 'Prodej bytu 2+kk v Přeštické ulici na Praze 4.',
+      detailText: 'Byt 2+kk, Praha 4 – Přeštická.',
       highlights: [
-        'Dispozice 3+kk',
-        '77 m²',
-        'Po rekonstrukci',
-        'U Stromovky'
+        'Dispozice 2+kk',
+        'Byt',
+        'Praha 4 – Přeštická'
+      ]
+    },
+    {
+      id: 4,
+      location: 'Praha 6, Eliášova',
+      type: 'Pronájem bytu 2+1',
+      typeLabel: 'Byt',
+      result: 'Pronajato',
+      category: ['prodano', 'byty', 'pronajem'],
+      image: 'images/nemovitosti/2-1-eliasova-p6.jpg',
+      description: 'Pronájem bytu 2+1 v Eliášově ulici na Praze 6.',
+      detailText: 'Zařízený byt 2+1 v Eliášově ulici, Praha 6.',
+      highlights: [
+        'Dispozice 2+1',
+        'Byt',
+        'Praha 6 – Eliášova'
+      ]
+    },
+    {
+      id: 5,
+      location: 'Praha 8, Pernerova',
+      type: 'Prodej bytu 2+kk',
+      typeLabel: 'Byt',
+      result: 'Prodáno',
+      category: ['prodano', 'byty', 'prodej'],
+      image: 'images/nemovitosti/2kk-pernerova-p8-prodej.jpg',
+      description: 'Prodej bytu 2+kk v Pernerově ulici na Praze 8.',
+      detailText: 'Byt 2+kk, Praha 8 – Pernerova.',
+      highlights: [
+        'Dispozice 2+kk',
+        'Byt',
+        'Praha 8 – Pernerova'
+      ]
+    },
+    {
+      id: 6,
+      location: 'Milovice',
+      type: 'Prodej bytu 2+kk',
+      typeLabel: 'Byt',
+      result: 'Prodáno',
+      category: ['prodano', 'byty', 'prodej'],
+      image: 'images/nemovitosti/2kk-milovice-prodej.jpg',
+      description: 'Prodej bytu 2+kk v Milovicích.',
+      detailText: 'Byt 2+kk v bytovém domě v Milovicích.',
+      highlights: [
+        'Dispozice 2+kk',
+        'Byt',
+        'Milovice'
+      ]
+    },
+    {
+      id: 7,
+      location: 'Praha 4, Chodov',
+      type: 'Pronájem bytu 1+kk',
+      typeLabel: 'Byt',
+      result: 'Pronajato',
+      category: ['prodano', 'byty', 'pronajem'],
+      image: 'images/nemovitosti/1kk-chodov-hraskeho-pronajem.jpg',
+      description: 'Pronájem bytu 1+kk v Hráského ulici na Chodově, Praha 4.',
+      detailText: 'Byt 1+kk, Praha 4 – Chodov, Hráského.',
+      highlights: [
+        'Dispozice 1+kk',
+        'Byt',
+        'Praha 4 – Chodov, Hráského'
+      ]
+    },
+    {
+      id: 8,
+      location: 'Praha 4, Hráského',
+      type: 'Pronájem bytu 1+kk',
+      typeLabel: 'Byt',
+      result: 'Pronajato',
+      category: ['prodano', 'byty', 'pronajem'],
+      image: 'images/nemovitosti/1kk-hraskeho-p4-pronajem.jpg',
+      description: 'Pronájem bytu 1+kk v Hráského ulici na Praze 4.',
+      detailText: 'Byt 1+kk, Praha 4 – Hráského.',
+      highlights: [
+        'Dispozice 1+kk',
+        'Byt',
+        'Praha 4 – Hráského'
       ]
     }
   ];
@@ -1774,6 +1850,59 @@
     });
   }
 
+  function initTenisLightbox() {
+    var root = document.querySelector('.about-tenis-photos');
+    var lightbox = document.getElementById('tenis-lightbox');
+    var image = document.getElementById('tenis-lightbox-image');
+    var items;
+    var current = 0;
+
+    if (!root || !lightbox || !image) return;
+
+    items = Array.prototype.slice.call(root.querySelectorAll('[data-tenis-index]'));
+    if (!items.length) return;
+
+    function show(index) {
+      var item = items[index];
+      var photo = item ? item.querySelector('img') : null;
+      if (!photo) return;
+      current = index;
+      image.src = item.getAttribute('href');
+      image.alt = photo.getAttribute('alt') || '';
+      lightbox.hidden = false;
+      document.body.style.overflow = 'hidden';
+    }
+
+    function close() {
+      lightbox.hidden = true;
+      document.body.style.overflow = '';
+    }
+
+    function step(delta) {
+      show((current + delta + items.length) % items.length);
+    }
+
+    root.addEventListener('click', function (e) {
+      var link = e.target.closest('[data-tenis-index]');
+      if (!link || !root.contains(link)) return;
+      e.preventDefault();
+      show(Number(link.getAttribute('data-tenis-index')) || 0);
+    });
+
+    lightbox.addEventListener('click', function (e) {
+      if (e.target.closest('[data-tenis-close]')) close();
+      if (e.target.closest('[data-tenis-prev]')) step(-1);
+      if (e.target.closest('[data-tenis-next]')) step(1);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (lightbox.hidden) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') step(-1);
+      if (e.key === 'ArrowRight') step(1);
+    });
+  }
+
   /* ==========================================================================
      HERO VIDEO FALLBACK
      ========================================================================== */
@@ -1824,6 +1953,7 @@
       case 'o-mne':
         initTestimonialsPreview();
         initProcessTimeline();
+        initTenisLightbox();
         break;
       case 'sluzby':
         break;

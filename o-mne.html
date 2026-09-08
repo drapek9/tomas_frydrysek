@@ -54,8 +54,16 @@
     <section class="about-story section" aria-labelledby="tenis-heading">
       <div class="container">
         <div class="about-story__grid about-story__grid--reverse">
-          <div class="about-story__image-wrap reveal">
-            <img src="images/fotka_2.jpg" alt="Tomáš Frydrýšek při tenise" class="about-story__image" loading="lazy" width="720" height="960">
+          <div class="about-tenis-photos reveal">
+            <a href="images/tenis/fotka_tenis_1.jpg" class="about-tenis-photos__item" data-tenis-index="0">
+              <img src="images/tenis/fotka_tenis_1.jpg" alt="Tomáš Frydrýšek při tenise v dětství" class="about-tenis-photos__img" loading="lazy" width="640" height="853">
+            </a>
+            <a href="images/tenis/fotka_tenis_2.jpeg" class="about-tenis-photos__item" data-tenis-index="1">
+              <img src="images/tenis/fotka_tenis_2.jpeg" alt="Tomáš Frydrýšek v tenisovém oblečení" class="about-tenis-photos__img" loading="lazy" width="640" height="853">
+            </a>
+            <a href="images/tenis/fotka_tenis_3.jpeg" class="about-tenis-photos__item" data-tenis-index="2">
+              <img src="images/tenis/fotka_tenis_3.jpeg" alt="Tomáš Frydrýšek připravený na tenis" class="about-tenis-photos__img" loading="lazy" width="640" height="853">
+            </a>
           </div>
           <div class="about-story__content">
             <div class="section-header reveal">
@@ -166,6 +174,20 @@
   </main>
 
   <div id="site-footer"></div>
+
+  <div class="lightbox" id="tenis-lightbox" hidden>
+    <div class="lightbox__backdrop" data-tenis-close></div>
+    <button type="button" class="lightbox__close" data-tenis-close aria-label="Zavřít">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button type="button" class="lightbox__nav lightbox__nav--prev" data-tenis-prev aria-label="Předchozí fotka">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <img class="lightbox__image" id="tenis-lightbox-image" alt="">
+    <button type="button" class="lightbox__nav lightbox__nav--next" data-tenis-next aria-label="Další fotka">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
 
   <script src="js/partials.js"></script>
   <script src="js/script.js" defer></script>
