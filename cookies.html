@@ -81,9 +81,17 @@
         <p>Při první návštěvě webu se zobrazí cookie lišta. Můžete zvolit:</p>
         <ul>
           <li><strong>Přijmout vše</strong> – povolíte nezbytné i analytické cookies.</li>
-          <li><strong>Pouze nezbytné</strong> – analytické cookies se nenačtou.</li>
+          <li><strong>Nepovinné odmítnout</strong> – povolíte pouze nezbytné cookies.</li>
         </ul>
-        <p>Svůj souhlas můžete kdykoli změnit nebo odvolat prostřednictvím cookie lišty, která je dostupná v patičce webu.</p>
+        <p>Svou volbu můžete kdykoli změnit níže nebo odkazem <strong>Nastavení cookies</strong> v patičce webu.</p>
+
+        <div class="cookie-consent-panel" id="cookie-consent-panel">
+          <p class="cookie-consent-panel__status" data-consent-status>Zatím jste nevyjádřili souhlas s cookies.</p>
+          <div class="cookie-consent-panel__actions">
+            <button type="button" class="btn btn--outline-dark btn--sm" data-cookie-reject>Pouze nezbytné</button>
+            <button type="button" class="btn btn--accent btn--sm" data-cookie-accept>Přijmout vše</button>
+          </div>
+        </div>
 
         <h2 id="prohlizec">6. Nastavení v prohlížeči</h2>
         <p>Cookies můžete spravovat i přímo v nastavení svého prohlížeče – můžete je odmítnout, smazat nebo omezit. Omezení nezbytných cookies nebo localStorage může způsobit, že se při každé návštěvě znovu zobrazí cookie lišta.</p>

@@ -89,6 +89,7 @@
         '</div>' +
         '<div class="footer__bottom">' +
           '<p>&copy; 2026 Tomáš Frydrýšek - Realitní makléř Bidli. Všechna práva vyhrazena.</p>' +
+          '<p><button type="button" class="footer__cookie-settings" data-cookie-settings>Nastavení cookies</button></p>' +
           '<p class="footer__credit">Web vytvořil <a href="https://simondrapal.cz/" target="_blank" rel="noopener noreferrer" class="footer__credit-link">Šimon Drápal</a></p>' +
         '</div>' +
       '</div>' +

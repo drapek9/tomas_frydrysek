@@ -86,6 +86,98 @@
 
   const DEALS = [
     {
+      id: 9,
+      location: 'Úvaly u Prahy',
+      type: 'Prodej rodinného domu 5+1',
+      typeLabel: 'Rodinný dům',
+      result: 'Prodáno',
+      category: ['prodano', 'domy', 'prodej'],
+      image: 'images/nemovitosti/rd-5-1-uvaly-prodej.jpg',
+      description: 'Prodej dvoupodlažní novostavby rodinného domu 5+1 v Úvalech u Prahy. Terasa, podzemní garáž a velkorysý pozemek.',
+      detailText: 'Novostavba rodinného domu 5+1, terasa, podzemní garáž a velkorysý pozemek v Úvalech u Prahy.',
+      highlights: [
+        'Dispozice 5+1',
+        'Novostavba',
+        'Terasa a podzemní garáž',
+        'Velkorysý pozemek',
+        'Úvaly u Prahy'
+      ]
+    },
+    {
+      id: 10,
+      location: 'Hostivice',
+      type: 'Prodej řadového domu 5+1',
+      typeLabel: 'Řadový dům',
+      result: 'Prodáno',
+      category: ['prodano', 'domy', 'prodej'],
+      landArea: '350 m²',
+      image: 'images/nemovitosti/rd-5-1-hostivice-prodej.jpg',
+      description: 'Prodej řadového domu 5+1 v Hostivicích. Pozemek 350 m² a garáž.',
+      detailText: 'Řadový rodinný dům 5+1 s garáží a pozemkem 350 m² v Hostivicích.',
+      highlights: [
+        'Dispozice 5+1',
+        'Pozemek 350 m²',
+        'Garáž',
+        'Hostivice'
+      ]
+    },
+    {
+      id: 11,
+      location: 'Praha 5, Točitá',
+      type: 'Prodej bytu 4+kk, 96 m²',
+      typeLabel: 'Byt',
+      result: 'Prodáno',
+      category: ['prodano', 'byty', 'prodej'],
+      area: '96 m²',
+      ownership: 'Osobní vlastnictví',
+      image: 'images/nemovitosti/4kk-tocita-p5-prodej.jpg',
+      description: 'Prodej bytu 4+kk o 96 m² s terasou v Točité ulici na Praze 5. Osobní vlastnictví.',
+      detailText: 'Byt 4+kk, 96 m², terasa, osobní vlastnictví. Praha 5 – Točitá.',
+      highlights: [
+        'Dispozice 4+kk',
+        '96 m²',
+        'Terasa',
+        'Osobní vlastnictví',
+        'Praha 5 – Točitá'
+      ]
+    },
+    {
+      id: 12,
+      location: 'Praha 5, Točitá',
+      type: 'Prodej bytu 3+1, 78 m²',
+      typeLabel: 'Byt',
+      result: 'Prodáno',
+      category: ['prodano', 'byty', 'prodej'],
+      area: '78 m²',
+      ownership: 'Osobní vlastnictví',
+      image: 'images/nemovitosti/3-1-tocita-p5-prodej.jpg',
+      description: 'Prodej bytu 3+1 o 78 m² v Točité ulici na Praze 5. Osobní vlastnictví.',
+      detailText: 'Byt 3+1, 78 m², osobní vlastnictví. Praha 5 – Točitá.',
+      highlights: [
+        'Dispozice 3+1',
+        '78 m²',
+        'Osobní vlastnictví',
+        'Praha 5 – Točitá'
+      ]
+    },
+    {
+      id: 13,
+      location: 'Praha 4, Přeštická',
+      type: 'Prodej bytu 2+kk, 29 m²',
+      typeLabel: 'Byt',
+      result: 'Prodáno',
+      category: ['prodano', 'byty', 'prodej'],
+      area: '29 m²',
+      image: 'images/nemovitosti/2kk-presticka-15-prodej.jpg',
+      description: 'Prodej bytu 2+kk o 29 m² v Přeštické ulici na Praze 4.',
+      detailText: 'Byt 2+kk, 29 m², Praha 4 – Přeštická.',
+      highlights: [
+        'Dispozice 2+kk',
+        '29 m²',
+        'Praha 4 – Přeštická'
+      ]
+    },
+    {
       id: 1,
       location: 'Praha 10, Vršovice',
       type: 'Prodej bytu 2+kk',
@@ -1970,6 +2062,27 @@
       default:
         break;
     }
+
+    initCookieConsentLoader();
+  }
+
+  function initCookieConsentLoader() {
+    if (window.__tfCookiesLoaderInit) return;
+    window.__tfCookiesLoaderInit = true;
+
+    var configScript = document.createElement('script');
+    configScript.src = 'js/cookies-config.js';
+    configScript.onload = function () {
+      if (document.getElementById('cookie-consent-script')) return;
+      var script = document.createElement('script');
+      script.id = 'cookie-consent-script';
+      script.src = 'js/cookies.js';
+      script.onload = function () {
+        if (typeof initCookieConsent === 'function') initCookieConsent();
+      };
+      document.body.appendChild(script);
+    };
+    document.body.appendChild(configScript);
   }
 
   function bootstrap() {
