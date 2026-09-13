@@ -86,6 +86,65 @@
 
   const DEALS = [
     {
+      id: 16,
+      location: 'Křivoklát',
+      type: 'Prodej resortu s restaurací a terasou',
+      typeLabel: 'Resort',
+      result: 'Prodáno',
+      category: ['prodano', 'prodej'],
+      image: 'images/nemovitosti/resort-krivoklat-1.jpg',
+      images: [
+        'images/nemovitosti/resort-krivoklat-1.jpg',
+        'images/nemovitosti/resort-krivoklat-2.jpg',
+        'images/nemovitosti/resort-krivoklat-3.jpg'
+      ],
+      description: 'Prodej resortu Křivoklát s restaurací a terasou.',
+      detailText: 'Resort Křivoklát s restaurací a terasou.',
+      highlights: [
+        'Resort',
+        'Restaurace',
+        'Terasa',
+        'Křivoklát'
+      ]
+    },
+    {
+      id: 14,
+      location: 'Praha 4, Nusle',
+      type: 'Prodej zavedeného hotelu v srdci Prahy',
+      typeLabel: 'Hotel',
+      result: 'Prodáno',
+      category: ['prodano', 'prodej'],
+      image: 'images/nemovitosti/hotel-vysehrad-p4-prodej.jpg',
+      description: 'Prodej zavedeného hotelu v srdci Prahy, Marie Cibulkové 29, Praha 4 – Nusle u Vyšehradu.',
+      detailText: 'Zavedený hotel Hotel Vyšehrad, Marie Cibulkové 29, Praha 4.',
+      highlights: [
+        'Hotel',
+        'Zavedený provoz',
+        'Marie Cibulkové 29',
+        'Praha 4 – Nusle, Vyšehrad'
+      ]
+    },
+    {
+      id: 15,
+      location: 'Praha 6, Mongolská',
+      type: 'Prodej objektu velvyslanectví Iráku',
+      typeLabel: 'Komerční objekt',
+      result: 'Prodáno',
+      category: ['prodano', 'prodej'],
+      image: 'images/nemovitosti/ambasada-irak-p6-prodej.jpeg',
+      images: [
+        'images/nemovitosti/ambasada-irak-p6-prodej.jpeg',
+        'images/nemovitosti/ambasada-irak-p6-prodej-2.webp'
+      ],
+      description: 'Prodej objektu velvyslanectví Iráku v Mongolské ulici 607 na Praze 6.',
+      detailText: 'Objekt velvyslanectví Iráku, Mongolská 607, Praha 6.',
+      highlights: [
+        'Velvyslanectví Iráku',
+        'Mongolská 607',
+        'Praha 6'
+      ]
+    },
+    {
       id: 9,
       location: 'Úvaly u Prahy',
       type: 'Prodej rodinného domu 5+1',
@@ -756,29 +815,81 @@
     });
   }
 
+  function dealImages(item) {
+    if (item.images && item.images.length) return item.images;
+    return item.image ? [item.image] : [];
+  }
+
   function renderDeals(items) {
     var grid = document.getElementById('deals-grid');
     if (!grid) return;
     grid.innerHTML = '';
 
     items.forEach(function (item, index) {
-      // "Realizováno" nesmí být rozkliknutelné (jen vizuální karta s hoverem).
-      // Používáme div místo odkazu, aby se neotevíral detail a nezobrazoval se kurzor pointer.
+      var photos = dealImages(item);
+      var alt = item.location + ' - ' + item.type;
+      var gallery = photos.length > 1;
       var card = document.createElement('div');
-      card.className = 'deal-card deal-card--sold reveal visible';
-      card.setAttribute('aria-label', item.location + ' - ' + item.type + ', ' + item.result);
+      card.className = 'deal-card deal-card--sold reveal visible' + (gallery ? ' deal-card--gallery' : '');
+      card.setAttribute('aria-label', alt + ', ' + item.result);
       card.style.transitionDelay = index * 0.06 + 's';
       card.tabIndex = -1;
 
+      var imagesHtml = photos.map(function (src, i) {
+        return '<img class="deal-card__image' + (i === 0 ? ' is-active' : '') + '" src="' + src + '" alt="' + alt + '" loading="lazy" width="500" height="650">';
+      }).join('');
+
+      var navHtml = '';
+      if (gallery) {
+        navHtml =
+          '<button type="button" class="deal-card__nav deal-card__nav--prev" aria-label="Předchozí fotka">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>' +
+          '</button>' +
+          '<button type="button" class="deal-card__nav deal-card__nav--next" aria-label="Další fotka">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>' +
+          '</button>' +
+          '<div class="deal-card__dots">' +
+            photos.map(function (_, i) {
+              return '<button type="button" class="deal-card__dot' + (i === 0 ? ' is-active' : '') + '" aria-label="Fotka ' + (i + 1) + '"></button>';
+            }).join('') +
+          '</div>';
+      }
+
       card.innerHTML =
-        '<img class="deal-card__image" src="' + item.image + '" alt="' + item.location + ' - ' + item.type + '" loading="lazy" width="500" height="650">' +
+        imagesHtml +
+        navHtml +
         '<div class="deal-card__overlay">' +
           '<span class="deal-card__result">' + item.result + '</span>' +
           '<h3 class="deal-card__location">' + item.location + '</h3>' +
           '<p class="deal-card__type">' + item.type + '</p>' +
         '</div>';
 
+      if (gallery) initDealGallery(card, photos.length);
       grid.appendChild(card);
+    });
+  }
+
+  function initDealGallery(card, count) {
+    var images = card.querySelectorAll('.deal-card__image');
+    var dots = card.querySelectorAll('.deal-card__dot');
+    var current = 0;
+
+    function show(index) {
+      current = (index + count) % count;
+      images.forEach(function (img, i) {
+        img.classList.toggle('is-active', i === current);
+      });
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle('is-active', i === current);
+      });
+    }
+
+    var prev = card.querySelector('.deal-card__nav--prev');
+    var next = card.querySelector('.deal-card__nav--next');
+    if (prev) prev.addEventListener('click', function () { show(current - 1); });
+    if (next) next.addEventListener('click', function () { show(current + 1); });
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { show(i); });
     });
   }
 
@@ -1942,17 +2053,17 @@
     });
   }
 
-  function initTenisLightbox() {
-    var root = document.querySelector('.about-tenis-photos');
-    var lightbox = document.getElementById('tenis-lightbox');
-    var image = document.getElementById('tenis-lightbox-image');
-    var items;
+  function initPhotoGalleries() {
+    var lightbox = document.getElementById('photo-lightbox');
+    var image = document.getElementById('photo-lightbox-image');
+    var galleries;
+    var items = [];
     var current = 0;
 
-    if (!root || !lightbox || !image) return;
+    if (!lightbox || !image) return;
 
-    items = Array.prototype.slice.call(root.querySelectorAll('[data-tenis-index]'));
-    if (!items.length) return;
+    galleries = Array.prototype.slice.call(document.querySelectorAll('[data-photo-gallery]'));
+    if (!galleries.length) return;
 
     function show(index) {
       var item = items[index];
@@ -1971,20 +2082,33 @@
     }
 
     function step(delta) {
+      if (!items.length) return;
       show((current + delta + items.length) % items.length);
     }
 
-    root.addEventListener('click', function (e) {
-      var link = e.target.closest('[data-tenis-index]');
-      if (!link || !root.contains(link)) return;
-      e.preventDefault();
-      show(Number(link.getAttribute('data-tenis-index')) || 0);
+    galleries.forEach(function (root) {
+      root.addEventListener('click', function (e) {
+        var link = e.target.closest('[data-gallery-index]');
+        if (!link || !root.contains(link)) return;
+        e.preventDefault();
+        items = Array.prototype.slice.call(root.querySelectorAll('[data-gallery-index]'));
+        show(Number(link.getAttribute('data-gallery-index')) || 0);
+      });
+    });
+
+    document.querySelectorAll('[data-gallery-open]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var root = document.getElementById(btn.getAttribute('data-gallery-open'));
+        if (!root) return;
+        items = Array.prototype.slice.call(root.querySelectorAll('[data-gallery-index]'));
+        show(Number(btn.getAttribute('data-gallery-start')) || 0);
+      });
     });
 
     lightbox.addEventListener('click', function (e) {
-      if (e.target.closest('[data-tenis-close]')) close();
-      if (e.target.closest('[data-tenis-prev]')) step(-1);
-      if (e.target.closest('[data-tenis-next]')) step(1);
+      if (e.target.closest('[data-lightbox-close]')) close();
+      if (e.target.closest('[data-lightbox-prev]')) step(-1);
+      if (e.target.closest('[data-lightbox-next]')) step(1);
     });
 
     document.addEventListener('keydown', function (e) {
@@ -2045,7 +2169,7 @@
       case 'o-mne':
         initTestimonialsPreview();
         initProcessTimeline();
-        initTenisLightbox();
+        initPhotoGalleries();
         break;
       case 'sluzby':
         break;

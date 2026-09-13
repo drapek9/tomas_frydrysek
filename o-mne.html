@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -51,31 +54,41 @@
       </div>
     </section>
 
-    <section class="about-story section" aria-labelledby="tenis-heading">
+    <section class="about-story section" aria-labelledby="bruno-heading">
       <div class="container">
         <div class="about-story__grid about-story__grid--reverse">
-          <div class="about-tenis-photos reveal">
-            <a href="images/tenis/fotka_tenis_1.jpg" class="about-tenis-photos__item" data-tenis-index="0">
-              <img src="images/tenis/fotka_tenis_1.jpg" alt="Tomáš Frydrýšek při tenise v dětství" class="about-tenis-photos__img" loading="lazy" width="640" height="853">
-            </a>
-            <a href="images/tenis/fotka_tenis_2.jpeg" class="about-tenis-photos__item" data-tenis-index="1">
-              <img src="images/tenis/fotka_tenis_2.jpeg" alt="Tomáš Frydrýšek v tenisovém oblečení" class="about-tenis-photos__img" loading="lazy" width="640" height="853">
-            </a>
-            <a href="images/tenis/fotka_tenis_3.jpeg" class="about-tenis-photos__item" data-tenis-index="2">
-              <img src="images/tenis/fotka_tenis_3.jpeg" alt="Tomáš Frydrýšek připravený na tenis" class="about-tenis-photos__img" loading="lazy" width="640" height="853">
-            </a>
+          <div class="bruno-photos-wrap">
+            <div class="about-tenis-photos reveal" id="bruno-gallery" data-photo-gallery>
+              <a href="images/bruno/bruno_2.jpeg" class="about-tenis-photos__item" data-gallery-index="0">
+                <img src="images/bruno/bruno_2.jpeg" alt="Bruno sedí na podlaze" class="about-tenis-photos__img" loading="lazy" width="800" height="1067">
+              </a>
+              <a href="images/bruno/bruno_1.jpeg" class="about-tenis-photos__item" data-gallery-index="1">
+                <img src="images/bruno/bruno_1.jpeg" alt="Bruno v bílém tričku" class="about-tenis-photos__img" loading="lazy" width="800" height="1067">
+              </a>
+              <a href="images/bruno/bruno_5.jpeg" class="about-tenis-photos__item" data-gallery-index="2">
+                <img src="images/bruno/bruno_5.jpeg" alt="Bruno v postroji na koberci" class="about-tenis-photos__img" loading="lazy" width="800" height="1067">
+              </a>
+              <a href="images/bruno/bruno_3.jpeg" class="about-tenis-photos__item" data-gallery-index="3" hidden>
+                <img src="images/bruno/bruno_3.jpeg" alt="Bruno odpočívá na gauči" class="about-tenis-photos__img" width="800" height="1067">
+              </a>
+              <a href="images/bruno/bruno_4.jpeg" class="about-tenis-photos__item" data-gallery-index="4" hidden>
+                <img src="images/bruno/bruno_4.jpeg" alt="Bruno spí na zádech" class="about-tenis-photos__img" width="800" height="1067">
+              </a>
+            </div>
+            <div class="bruno-photos__more reveal">
+              <button type="button" class="btn btn--outline-dark" data-gallery-open="bruno-gallery">Ukázat více</button>
+            </div>
           </div>
           <div class="about-story__content">
             <div class="section-header reveal">
-              <span class="section-tag">Volný čas</span>
-              <h2 id="tenis-heading" class="section-title">Když nejsem u nemovitosti, jsem na kurtu</h2>
+              <span class="section-tag">Parťák</span>
+              <h2 id="bruno-heading" class="section-title">Bruno – fotbalový pes</h2>
             </div>
             <p class="about__intro reveal">
-              Tenis hraju dlouho. Je to můj odpočinek a zároveň způsob, jak se udržet ve hře - doslova.
-              Na kurtu platí podobné věci jako v realitách: soustředění, trpělivost a slušné chování k soupeři.
+              Bruno je francouzský buldoček s velkou energií, láskou k dětem a mimořádným vztahem k fotbalu. Míč ho baví natolik, že s ním kličkuje skoro jako malý čtyřnohý Messi.
             </p>
             <p class="about__intro reveal">
-              Když se potkáme a tenis je i vaše téma, rád si o tom popovídám. Někdy je to lepší začátek schůzky než hned cena a dispozice.
+              Není to jen parťák na procházky. Je to fotbalový pes a dětský kamarád, který dokáže vykouzlit úsměv dětem i dospělým — na prohlídkách, na hřišti i jen tak mezi lidmi.
             </p>
           </div>
         </div>
@@ -105,7 +118,38 @@
       </div>
     </section>
 
-    <section class="section testimonials-preview" aria-labelledby="o-mne-reviews">
+    <section class="about-story section" aria-labelledby="tenis-heading">
+      <div class="container">
+        <div class="about-story__grid about-story__grid--reverse">
+          <div class="about-tenis-photos reveal" data-photo-gallery>
+            <a href="images/tenis/fotka_tenis_1.jpg" class="about-tenis-photos__item" data-gallery-index="0">
+              <img src="images/tenis/fotka_tenis_1.jpg" alt="Tomáš Frydrýšek při tenise v dětství" class="about-tenis-photos__img" loading="lazy" width="640" height="853">
+            </a>
+            <a href="images/tenis/fotka_tenis_2.png" class="about-tenis-photos__item" data-gallery-index="1">
+              <img src="images/tenis/fotka_tenis_2.png" alt="Tomáš Frydrýšek v tenisovém oblečení" class="about-tenis-photos__img" loading="lazy" width="640" height="853">
+            </a>
+            <a href="images/tenis/fotka_tenis_3.jpeg" class="about-tenis-photos__item" data-gallery-index="2">
+              <img src="images/tenis/fotka_tenis_3.jpeg" alt="Tomáš Frydrýšek připravený na tenis" class="about-tenis-photos__img" loading="lazy" width="640" height="853">
+            </a>
+          </div>
+          <div class="about-story__content">
+            <div class="section-header reveal">
+              <span class="section-tag">Volný čas</span>
+              <h2 id="tenis-heading" class="section-title">Když nejsem u nemovitosti, jsem na kurtu</h2>
+            </div>
+            <p class="about__intro reveal">
+              Tenis hraju dlouho. Je to můj odpočinek a zároveň způsob, jak se udržet ve hře - doslova.
+              Na kurtu platí podobné věci jako v realitách: soustředění, trpělivost a slušné chování k soupeři.
+            </p>
+            <p class="about__intro reveal">
+              Když se potkáme a tenis je i vaše téma, rád si o tom popovídám. Někdy je to lepší začátek schůzky než hned cena a dispozice.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--gray testimonials-preview" aria-labelledby="o-mne-reviews">
       <div class="container">
         <div class="section-header section-header--center reveal">
           <span class="section-tag">Reference</span>
@@ -118,7 +162,7 @@
       </div>
     </section>
 
-    <section class="process section section--gray" id="proces" aria-labelledby="proces-heading">
+    <section class="process section" id="proces" aria-labelledby="proces-heading">
       <div class="container">
         <div class="section-header section-header--center reveal">
           <span class="section-tag">Spolupráce</span>
@@ -158,7 +202,7 @@
       </div>
     </section>
 
-    <section class="section home-cta" aria-labelledby="o-mne-cta">
+    <section class="section section--gray home-cta" aria-labelledby="o-mne-cta">
       <div class="container">
         <div class="home-cta__inner reveal">
           <span class="section-tag">Spolupráce</span>
@@ -175,16 +219,16 @@
 
   <div id="site-footer"></div>
 
-  <div class="lightbox" id="tenis-lightbox" hidden>
-    <div class="lightbox__backdrop" data-tenis-close></div>
-    <button type="button" class="lightbox__close" data-tenis-close aria-label="Zavřít">
+  <div class="lightbox" id="photo-lightbox" hidden>
+    <div class="lightbox__backdrop" data-lightbox-close></div>
+    <button type="button" class="lightbox__close" data-lightbox-close aria-label="Zavřít">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
-    <button type="button" class="lightbox__nav lightbox__nav--prev" data-tenis-prev aria-label="Předchozí fotka">
+    <button type="button" class="lightbox__nav lightbox__nav--prev" data-lightbox-prev aria-label="Předchozí fotka">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
-    <img class="lightbox__image" id="tenis-lightbox-image" alt="">
-    <button type="button" class="lightbox__nav lightbox__nav--next" data-tenis-next aria-label="Další fotka">
+    <img class="lightbox__image" id="photo-lightbox-image" alt="">
+    <button type="button" class="lightbox__nav lightbox__nav--next" data-lightbox-next aria-label="Další fotka">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
   </div>
