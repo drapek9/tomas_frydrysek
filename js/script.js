@@ -394,7 +394,7 @@
       rating: 5
     },
     {
-      name: 'Hofmanová',
+      name: 'E. Kubátová',
       role: 'EDOX Reality | Prodej nemovitosti',
       quote: 'S Tomášem Frydrýškem jsme spolupracovali v době jeho působení v EDOX Reality. Byli jsme spokojeni s jeho profesionálním přístupem a především s tím, že se prodeji skutečně věnoval. Celý obchod dotáhl až do úspěšného konce.',
       rating: 5
@@ -406,7 +406,7 @@
       rating: 5
     },
     {
-      name: 'Gabčová',
+      name: 'Jiří Chytrý',
       role: 'EDOX Reality | Prodej bytu, Praha 6',
       quote: 'Při prodeji bytu v Praze 6 jsme se rozhodli využít služeb Tomáše Frydrýška. Od začátku jsme oceňovali jeho zkušenosti, komunikaci a znalost pražského realitního trhu. Prodej nakonec proběhl úspěšně a s výsledkem jsme byli spokojeni.',
       rating: 5
@@ -414,17 +414,17 @@
     {
       name: 'Baďouček',
       role: 'BIDLI | Pronájem rodinného domu, Chýně',
-      quote: 'Tomáš Frydrýšek nám pomáhal s pronájmem rodinného domu v Chýni. Oceňuji především jeho znalost trhu a to, že se postaral o celý proces od nabídky až po nalezení vhodného nájemce. Spolupráce byla rychlá a profesionální.',
+      quote: 'Tomáš Frydrýšek nám pomáhal s pronájmem rodinného domu v Chýni. Oceňuji především jeho znalost trhu a to, že se postaral o celý proces od nabídky až po podpis nájemní smlouvy a převodu energií.',
       rating: 5
     },
     {
-      name: 'Beket R.',
+      name: 'Pavla Stejskalová',
       role: 'BIDLI | Prodej bytu v novostavbě',
       quote: 'Při prodeji bytu v novostavbě jsme využili služeb Tomáše Frydrýška. Od začátku jsme měli pocit, že nemovitost je v dobrých rukou. Tomáš se postaral o komunikaci se zájemci i o celý průběh prodeje a díky jeho zkušenostem jsme se nemuseli zabývat zbytečnými komplikacemi.',
       rating: 5
     },
     {
-      name: 'Martina Ehrenbergerová',
+      name: 'M. Mach',
       role: 'BIDLI | Prodej rodinného domu, Praha 6',
       quote: 'Prodej našeho rodinného domu v Praze 6 nebyl jednoduchý a během celého procesu se objevila řada komplikací. Tomáš Frydrýšek se ale nevzdal, jednotlivé problémy postupně řešil a celý obchod dokázal dotáhnout do úspěšného konce. Právě schopnost zvládnout i komplikovaný prodej pro nás byla největší hodnotou jeho práce.',
       rating: 5
