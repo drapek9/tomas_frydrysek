@@ -2124,8 +2124,14 @@
      ========================================================================== */
 
   function initHeroVideo() {
-    var video = document.querySelector('video.hero__video');
+    var video = document.querySelector('.hero__bg-video');
     if (!video) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      video.pause();
+      video.removeAttribute('autoplay');
+      return;
+    }
 
     video.addEventListener('error', function () {
       video.style.display = 'none';
@@ -2134,7 +2140,7 @@
     var playPromise = video.play();
     if (playPromise !== undefined) {
       playPromise.catch(function () {
-        /* Autoplay blocked - poster image will show */
+        /* Autoplay blocked — navy background remains */
       });
     }
   }
