@@ -131,11 +131,7 @@
       typeLabel: 'Komerční objekt',
       result: 'Prodáno',
       category: ['prodano', 'prodej'],
-      image: 'images/nemovitosti/ambasada-irak-p6-prodej.jpeg',
-      images: [
-        'images/nemovitosti/ambasada-irak-p6-prodej.jpeg',
-        'images/nemovitosti/ambasada-irak-p6-prodej-2.webp'
-      ],
+      image: 'images/nemovitosti/ambasada-irak-p6-prodej-3.jpeg',
       description: 'Prodej objektu velvyslanectví Iráku v Mongolské ulici 607 na Praze 6.',
       detailText: 'Objekt velvyslanectví Iráku, Mongolská 607, Praha 6.',
       highlights: [

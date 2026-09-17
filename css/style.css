@@ -11,7 +11,8 @@
   --color-gray-dark: #333333;
   --color-gray: #484848;
   --color-gray-light: #868686;
-  --color-navy: #172A46;
+  --color-navy: #214062;
+  --color-navy-active: #3568A6;
   --color-accent: #1E73E8;
   --color-accent-hover: #155FC7;
   --color-accent-rgb: 30, 115, 232;
@@ -285,13 +286,13 @@ ul, ol {
   z-index: 1000;
   height: var(--header-height);
   background: var(--color-navy);
-  box-shadow: 0 8px 24px rgba(23, 42, 70, 0.28);
+  box-shadow: 0 8px 24px rgba(33, 64, 98, 0.28);
   transition: background var(--transition), box-shadow var(--transition);
 }
 
 .header.scrolled {
   background: var(--color-navy);
-  box-shadow: 0 10px 28px rgba(23, 42, 70, 0.4);
+  box-shadow: 0 10px 28px rgba(33, 64, 98, 0.4);
 }
 
 .header__inner {
@@ -377,7 +378,7 @@ ul, ol {
 
 .nav__link.active {
   color: var(--color-white);
-  background: #2E5F9A;
+  background: var(--color-navy-active);
 }
 
 .header__actions {
@@ -3863,7 +3864,7 @@ a.deal-card {
 
   .nav__link.active {
     color: var(--color-white);
-    background: #2E5F9A;
+    background: var(--color-navy-active);
   }
 
   .header__phone span {
@@ -4375,6 +4376,17 @@ a.deal-card {
   grid-template-columns: 0.9fr 1.1fr;
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
+}
+
+.about-story__claim {
+  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+.about-story__content .section-header:has(.about-story__claim) {
+  margin-bottom: 1.5rem;
 }
 
 .about-story__grid--reverse {
