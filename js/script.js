@@ -1680,6 +1680,43 @@
       consent: false
     };
 
+    function needsDisposition() {
+      return data.type === 'byt' || data.type === 'dům';
+    }
+
+    function allowsCoopOwnership() {
+      return data.type === 'byt' || data.type === 'dům';
+    }
+
+    function updateTypeFields() {
+      var wrap = document.getElementById('estimate-disposition-wrap');
+      var dispositionEl = document.getElementById('estimate-disposition');
+      var coop = document.getElementById('estimate-ownership-coop');
+
+      if (wrap) {
+        if (!needsDisposition()) {
+          wrap.hidden = true;
+          data.disposition = '';
+          if (dispositionEl) dispositionEl.selectedIndex = 0;
+        } else {
+          wrap.hidden = false;
+        }
+      }
+
+      if (coop) {
+        var coopInput = coop.querySelector('input');
+        if (!allowsCoopOwnership()) {
+          coop.hidden = true;
+          if (coopInput && coopInput.checked) {
+            coopInput.checked = false;
+            data.ownership = '';
+          }
+        } else {
+          coop.hidden = false;
+        }
+      }
+    }
+
     function setStep(i) {
       step = Math.max(0, Math.min(i, steps.length - 1));
       steps.forEach(function (s, idx) {
@@ -1708,6 +1745,7 @@
         });
         btn.classList.add('is-selected');
         data.type = btn.getAttribute('data-estimate-choice') || '';
+        updateTypeFields();
         setTimeout(function () { setStep(1); }, 280);
       });
     });
@@ -1750,11 +1788,11 @@
         var areaEl = document.getElementById('estimate-area');
         var ownershipSel = formRoot.querySelector('input[name="estimate-ownership"]:checked');
 
-        data.disposition = dispositionEl && dispositionEl.value || '';
+        data.disposition = needsDisposition() ? (dispositionEl && dispositionEl.value || '') : '';
         data.area = areaEl && areaEl.value.trim() || '';
         data.ownership = ownershipSel && ownershipSel.value || '';
 
-        if (!data.disposition) {
+        if (needsDisposition() && !data.disposition) {
           if (dispositionEl) dispositionEl.focus();
           return;
         }
@@ -1809,28 +1847,38 @@
           return;
         }
 
-        console.log('Estimate wizard submitted:', data);
-
-        var summary = document.getElementById('estimate-summary');
-        if (summary) {
-          summary.hidden = false;
-          summary.innerHTML =
-            '<p><strong>Typ:</strong> ' + data.type + '</p>' +
-            '<p><strong>Adresa:</strong> ' + (data.street ? data.street + ', ' : '') + data.city + '</p>' +
-            '<p><strong>Vlastník:</strong> ' + data.ownerRole + '</p>' +
-            '<p><strong>Dispozice:</strong> ' + data.disposition + ' · <strong>Plocha:</strong> ' + data.area + ' m²</p>' +
-            '<p><strong>Druh vlastnictví:</strong> ' + data.ownership + '</p>' +
-            '<p><strong>Kontakt:</strong> ' + data.name + ', ' + data.email + ', ' + data.phone + '</p>' +
-            (data.message ? '<p><strong>Zpráva:</strong> ' + data.message + '</p>' : '');
+        if (typeof TFEmail === 'undefined' || !TFEmail.sendEstimate) {
+          showToast('Odesílání e-mailu není připravené. Zkuste to znovu nebo zavolejte.');
+          return;
         }
 
-        var feedback = document.getElementById('estimate-feedback');
-        if (feedback) {
-          feedback.innerHTML = '<strong>Děkuji.</strong> Ozvu se co nejdříve s nezávazným odhadem.';
-        }
+        setSubmitBusy(submitBtn, true, 'Odesílám…');
 
-        showToast('Děkujeme! Brzy vás budeme kontaktovat.');
-        submitBtn.disabled = true;
+        TFEmail.sendEstimate(data).then(function () {
+          var summary = document.getElementById('estimate-summary');
+          if (summary) {
+            summary.hidden = false;
+            summary.innerHTML =
+              '<p><strong>Typ:</strong> ' + data.type + '</p>' +
+              '<p><strong>Adresa:</strong> ' + (data.street ? data.street + ', ' : '') + data.city + '</p>' +
+              '<p><strong>Vlastník:</strong> ' + data.ownerRole + '</p>' +
+              (data.disposition ? '<p><strong>Dispozice:</strong> ' + data.disposition + '</p>' : '') +
+              '<p><strong>Plocha:</strong> ' + data.area + ' m²</p>' +
+              '<p><strong>Druh vlastnictví:</strong> ' + data.ownership + '</p>' +
+              '<p><strong>Kontakt:</strong> ' + data.name + ', ' + data.email + ', ' + data.phone + '</p>' +
+              (data.message ? '<p><strong>Zpráva:</strong> ' + data.message + '</p>' : '');
+          }
+
+          var feedback = document.getElementById('estimate-feedback');
+          if (feedback) {
+            feedback.innerHTML = '<strong>Děkuji.</strong> Ozvu se co nejdříve s nezávazným odhadem.';
+          }
+
+          showToast('Děkujeme! Brzy vás budeme kontaktovat.');
+        }).catch(function () {
+          setSubmitBusy(submitBtn, false);
+          showToast('Odeslání se nepodařilo. Zkuste to znovu nebo zavolejte.');
+        });
       });
     }
 
@@ -1959,10 +2007,23 @@
         data[formKey] = value;
       });
 
-      console.log('Contact form submitted:', data);
-      showToast('Děkujeme! Brzy vás budeme kontaktovat.');
-      form.reset();
-      updateIntentUi();
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (typeof TFEmail === 'undefined' || !TFEmail.sendContact) {
+        showToast('Odesílání e-mailu není připravené. Zkuste to znovu nebo zavolejte.');
+        return;
+      }
+
+      setSubmitBusy(submitBtn, true, 'Odesílám…');
+
+      TFEmail.sendContact(data).then(function () {
+        showToast('Děkujeme! Brzy vás budeme kontaktovat.');
+        form.reset();
+        updateIntentUi();
+        setSubmitBusy(submitBtn, false);
+      }).catch(function () {
+        setSubmitBusy(submitBtn, false);
+        showToast('Odeslání se nepodařilo. Zkuste to znovu nebo zavolejte.');
+      });
     });
   }
 
@@ -2008,6 +2069,20 @@
 
   function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function setSubmitBusy(btn, busy, busyLabel) {
+    if (!btn) return;
+    if (busy) {
+      if (!btn.getAttribute('data-label')) {
+        btn.setAttribute('data-label', btn.textContent);
+      }
+      btn.disabled = true;
+      btn.textContent = busyLabel || 'Odesílám…';
+      return;
+    }
+    btn.disabled = false;
+    btn.textContent = btn.getAttribute('data-label') || btn.textContent;
   }
 
   /* ==========================================================================

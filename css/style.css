@@ -249,6 +249,13 @@ ul, ol {
   background: var(--color-bg);
 }
 
+.btn:disabled {
+  opacity: 0.65;
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
+}
+
 .btn--sm {
   padding: 0.625rem 1.25rem;
   font-size: 0.8rem;
@@ -2470,6 +2477,11 @@ a.deal-card {
   font-weight: 600;
   letter-spacing: 0.02em;
   color: var(--color-gray);
+}
+
+#estimate-disposition-wrap[hidden],
+#estimate-ownership-coop[hidden] {
+  display: none;
 }
 
 .estimate-radio-list {
