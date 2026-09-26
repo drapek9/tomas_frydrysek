@@ -1,0 +1,21 @@
+{
+  "name": "Tomáš Frydrýšek – realitní makléř Praha",
+  "short_name": "Frydrýšek",
+  "lang": "cs",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#214062",
+  "theme_color": "#214062",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ]
+}

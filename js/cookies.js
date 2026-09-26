@@ -29,7 +29,7 @@ function saveConsent(analytics) {
 }
 
 function applyConsent(consent) {
-  if (consent && consent.analytics && COOKIES.analytics && COOKIES.analytics.googleAnalyticsId) {
+  if (COOKIES.analytics && COOKIES.analytics.googleAnalyticsId) {
     loadGoogleAnalytics(COOKIES.analytics.googleAnalyticsId);
   }
 }
@@ -70,8 +70,7 @@ function renderCookieBanner() {
         '<div class="cookie-banner__text">' +
           '<p class="cookie-banner__title">Cookies a ochrana soukromí</p>' +
           '<p class="cookie-banner__desc">' +
-            'Používáme nezbytné cookies pro správné fungování webu a ukládání vaší volby. ' +
-            'Po souhlasu můžeme používat i analytické cookies pro měření návštěvnosti. ' +
+            'Používáme nezbytné cookies pro správné fungování webu, uložení vaší volby a měření návštěvnosti. ' +
             'Více v <a href="cookies.html">zásadách cookies</a> a ' +
             '<a href="ochrana-osobnich-udaju.html">ochraně osobních údajů</a>.' +
           '</p>' +
@@ -138,6 +137,10 @@ function initCookieSettingsLinks() {
 }
 
 function initCookieConsent() {
+  if (COOKIES.analytics && COOKIES.analytics.googleAnalyticsId) {
+    loadGoogleAnalytics(COOKIES.analytics.googleAnalyticsId);
+  }
+
   var consent = getStoredConsent();
   if (consent) {
     applyConsent(consent);

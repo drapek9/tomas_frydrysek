@@ -1,11 +1,11 @@
 /**
  * Cookies a analytika
- * googleAnalyticsId – po doplnění ID (např. G-XXXXXXXX) se GA načte jen po souhlasu uživatele
+ * googleAnalyticsId – měření návštěvnosti (nezbytné); načte se vždy
  */
 var COOKIES = {
   storageKey: 'tf_cookie_consent',
   version: 1,
   analytics: {
-    googleAnalyticsId: ''
+    googleAnalyticsId: 'G-RK0DLVQ003'
   }
 };

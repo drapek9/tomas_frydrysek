@@ -4142,6 +4142,7 @@ a.deal-card {
   height: 26px;
 }
 
+.service-detail h2,
 .service-detail h3 {
   font-family: var(--font-alt);
   font-size: 1.2rem;

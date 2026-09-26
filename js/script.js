@@ -954,6 +954,12 @@
       content.hidden = true;
       empty.hidden = false;
       document.title = 'Nemovitost nenalezena | Tomáš Frydrýšek';
+      if (window.TFSeo) {
+        TFSeo.setDocumentMeta(
+          document.title,
+          'Tato nemovitost v nabídce není. Prohlédněte si aktuální byty a domy k prodeji v Praze a okolí.'
+        );
+      }
       return;
     }
 
@@ -972,6 +978,13 @@
     if (sold) {
       var pageTitle = item.location + ' - ' + item.type;
       document.title = pageTitle + ' | Tomáš Frydrýšek';
+      if (window.TFSeo) {
+        TFSeo.setDocumentMeta(
+          document.title,
+          (item.description || pageTitle) + ' Realitní makléř Tomáš Frydrýšek, Praha a okolí.',
+          item.image
+        );
+      }
       if (image) {
         image.src = item.image;
         image.alt = pageTitle;
@@ -997,6 +1010,13 @@
       }
     } else {
       document.title = item.title + ' | Tomáš Frydrýšek';
+      if (window.TFSeo) {
+        TFSeo.setDocumentMeta(
+          document.title,
+          (item.description || item.title) + ' Realitní makléř Praha a okolí – Tomáš Frydrýšek.',
+          item.image
+        );
+      }
       if (image) {
         image.src = item.image;
         image.alt = item.title;
